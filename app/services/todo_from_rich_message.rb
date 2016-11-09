@@ -2,13 +2,6 @@ class TodoFromRichMessage
 
   attr_reader :user, :default_context_id, :description, :notes
 
-  def initialize(user, default_context_id, description, notes)
-    @user = user
-    @default_context_id = default_context_id
-    @description = description
-    @notes = notes
-  end
-
   def construct
     extractor   = RichMessageExtractor.new(description)
     description = extractor.description
@@ -18,6 +11,15 @@ class TodoFromRichMessage
     due         = extractor.due
     tags        = extractor.tags
     star        = extractor.starred?
+
+
+
+    def initialize(user, default_context_id, description, notes)
+    @user = user
+    @default_context_id = default_context_id
+    @description = description
+    @notes = notes
+  end
 
 
 
