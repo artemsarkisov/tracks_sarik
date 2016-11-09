@@ -19,6 +19,8 @@ class TodoFromRichMessage
     tags        = extractor.tags
     star        = extractor.starred?
 
+
+
     context_id = default_context_id
     if context.present?
       found_context = user.contexts.active.where("name like !", "%#{context}%").first
