@@ -132,7 +132,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    libv8 (5.3.332.38)
+    libv8 (5.3.332.38.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
