@@ -21,7 +21,7 @@ class TodoFromRichMessage
 
     context_id = default_context_id
     if context.present?
-      found_context = user.contexts.active.where("name like ?", "%#{context}%").first
+      found_context = user.contexts.active.where("name like ?", "%#{context_id}%").first
       found_context = user.contexts.where("name like ?", "%#{context}%").first if !found_context
       context_id = found_context.id if found_context
     end
