@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     locale = params[:locale] # specifying a locale in the request takes precedence
     locale = locale || prefs.locale unless current_user.nil? # otherwise, the locale of the currently logged in user takes over
-    locale = locale || request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first if request.env['HTTP_ACCEPT_LANGUAGE']
+    locale = locale || request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first if re
+    def set_localequest.env['HTTP_ACCEPT_LANGUAGE']
 
     if locale && I18n::available_locales.map(&:to_s).include?(locale.to_s)
       I18n.locale = locale
@@ -160,7 +161,7 @@ class ApplicationController < ActionController::Base
   end
 
   def boolean_param(param_name)
-    return false if param_name.blank?
+    return false if param_name.blank?http://hdrezka.me/series/drama/19545-eto-my.html
     s = params[param_name]
     return false if s.blank? || s == false || s =~ /^false$/i
     return true if s == true || s =~ /^true$/i
